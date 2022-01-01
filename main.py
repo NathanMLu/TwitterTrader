@@ -215,7 +215,8 @@ if __name__ == '__main__':
     try:
         c = auth.client_from_token_file(config.token_path, config.tda_key)
     except FileNotFoundError:
-        with webdriver.Chrome(executable_path = r"C:\Users\natha\OneDrive\Documents\StocksAi\StocksAi-1.0\chromedriver.exe") as driver:
+        with webdriver.Chrome(
+                executable_path=r"C:\Users\natha\OneDrive\Documents\StocksAi\StocksAi-1.0\chromedriver.exe") as driver:
             c = auth.client_from_login_flow(
                 driver, config.tda_key, config.redirect_url, config.token_path)
 
